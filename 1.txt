@@ -1,0 +1,15 @@
+from tkinter import *
+root = Tk()
+root.title('My App')
+frame = Frame(root)
+frame.pack()
+scrollbar = Scrollbar(frame)
+scrollbar.pack( side = RIGHT, fill = Y )
+list = Listbox(frame, yscrollcommand = scrollbar.set )
+dict={"ashu":6039284100,"xyz":7895443030,"abhishek":7394059384,"ashwani":777777381,"sumit":9847563210,\
+      "rohan":89293743210,"wxy":99998889789,"sohan":8907897689,"ttt":90876675,"zzz":9411343434 }
+for item in dict:
+    list.insert(END,"Key Is : " + str(item))
+    list.pack( side = LEFT, fill = BOTH )
+    scrollbar.config( command = list.yview )
+mainloop()
